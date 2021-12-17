@@ -1,0 +1,78 @@
+@import 'reset.scss';
+
+html {
+	font-size: 22px;
+}
+
+.app-wrapper {
+	display: flex;
+	flex-flow: column;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+.content-wrapper {
+	display: flex;
+	flex-flow: row;
+
+	& > div {
+		flex-basis: 50%;
+		padding: 0.2rem;
+	}
+
+	.results {
+		display: flex;
+		flex-flow: column;
+		align-items: end;
+
+		&__result-item {
+			display: grid;
+			gap: 3px;
+			margin: 0.5rem 1rem;
+			animation: fadeIn 0.35s;
+
+			grid-template-areas:
+				'name image'
+				'email image';
+
+			&__name {
+				grid-area: name;
+				text-align: right;
+				border-bottom: 1px solid darkgrey;
+			}
+			&__email {
+				grid-area: email;
+				text-align: right;
+			}
+			&__image {
+				grid-area: image;
+
+				img {
+					border-radius: 20px;
+				}
+			}
+		}
+	}
+
+	.request {
+		display: flex;
+		padding: 2rem 1rem;
+		justify-content: center;
+
+		button {
+			height: 3.5rem;
+			border-radius: 5px;
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

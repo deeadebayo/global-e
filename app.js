@@ -21,7 +21,7 @@ const htmlTagMaker = (
 }
 
 getResultsBtn.addEventListener('click', () => {
-	let sessionUsers = retrievedUsers.map(
+	let sessionUsers = retrievedUsers?.map(
 		({ name: { first, last }, email, picture: { thumbnail } }) => {
 			return { first, last, email, thumbnail }
 		}
@@ -36,14 +36,14 @@ getResultsBtn.addEventListener('click', () => {
 		let imageWrapperDetails = htmlTagMaker(
 			'div',
 			'class',
-			'results__results-item__details__image',
+			'results__result-item__image',
 			false
 		)
 
 		let personNameDetails = htmlTagMaker(
 			'div',
 			'class',
-			'results__results-item__details__name',
+			'results__result-item__name',
 			true,
 			`${first} ${last}`
 		)
@@ -51,7 +51,7 @@ getResultsBtn.addEventListener('click', () => {
 		let emailDetails = htmlTagMaker(
 			'div',
 			'class',
-			'results__results-item__details__email',
+			'results__result-item__email',
 			true,
 			email
 		)
